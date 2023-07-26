@@ -15,7 +15,6 @@ dev: ## serve for development
 	@cd frontend && START /B npm start 
 	@cd backend && php artisan serve
 
-
 install: ## performs initial setup
 	@echo "Installing libraries"
 	@cd backend && composer install && copy .env.example .env && php artisan key:generate

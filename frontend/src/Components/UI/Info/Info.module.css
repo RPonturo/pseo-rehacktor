@@ -1,0 +1,51 @@
+.info {
+    position: relative;
+}
+.info::before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 10px;
+    width: 2px;
+    height: 100%;
+    background-color: #dc3545;
+}
+
+.bg-info {
+    background: linear-gradient(#212529 5%, rgba(33, 37, 41, 0.6), #212529),
+        url("./../../../Assets/grid.png"), url("./../../../Assets/mars-sky.jpg");
+    background-size: cover, 120px, cover;
+    background-position: center, center, center;
+}
+
+.info-title {
+    position: relative;
+}
+
+.info-title::before {
+    position: absolute;
+    content: "";
+    top: 8px;
+    left: -25px;
+    width: 15px;
+    height: 15px;
+    background-color: #dc3545;
+    border: 1px solid #212529;
+    transform: rotate(45deg);
+}
+
+@media screen and (min-width: 992px) {
+    .info::before {
+        display: none;
+    }
+
+    .info-title {
+        border-bottom: 2px solid #dc3545;
+        padding-left: 10px;
+    }
+
+    .info-title::before {
+        left: -12px;
+        top: 27px;
+    }
+}
