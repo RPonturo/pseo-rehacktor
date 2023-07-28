@@ -4,37 +4,38 @@ import "./App.css";
 import Home from "./Components/Views/Home/Home";
 import Root from "./Components/Views/Root/Root";
 import Error from "./Components/Views/Error/Error";
-import Navbar from "./Components/UI/Navbar/Navbar";
-import Footer from "./Components/UI/Footer/Footer";
-import Info from "./Components/UI/Info/Info";
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Root />,
-        errorElement: <Error />,
-        children: [
-            {
-                path: "/",
-                element: <Home />,
-            },
-            {
-                path: "/info",
-                element: <Info />,
-            },
-        ],
-    },
-]);
+import Game from "./Components/Views/Game/Game";
+import Search from "./Components/Views/Search/Search";
+import Credits from "./Components/Views/Credits/Credits";
 
 function App() {
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <Root />,
+            errorElement: <Error />,
+            children: [
+                {
+                    path: "/",
+                    element: <Home />,
+                },
+                {
+                    path: "/credits",
+                    element: <Credits />,
+                },
+                {
+                    path: "/game/:slug",
+                    element: <Game />,
+                },
+                {
+                    path: "/search",
+                    element: <Search />,
+                },
+            ],
+        },
+    ]);
+
     return <RouterProvider router={router} />;
-    return (
-        <>
-            <Navbar />
-            <Home />
-            <Footer />
-        </>
-    );
 }
 
 export default App;

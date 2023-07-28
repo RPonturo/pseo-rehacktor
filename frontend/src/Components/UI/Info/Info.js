@@ -30,32 +30,32 @@ export default function Info() {
                 </div>
                 <div className="row px-md-5">
                     <div className="col-6 col-md-4 my-5 text-center text-md-start">
-                        <i className="fal fa-gamepad-alt fa-2x text-main"></i>
+                        <i className="fa-solid fa-gamepad-modern fa-2x text-main"></i>
                         <p className="h1 my-2">583097</p>
                         <p>Games</p>
                     </div>
                     <div className="col-6 col-md-4 my-5 text-center">
-                        <i className="fal fa-stream fa-2x text-main"></i>
+                        <i className="fa-solid fa-bars-staggered fa-2x text-main"></i>
                         <p className="h1 my-2">19</p>
                         <p>Categories</p>
                     </div>
                     <div className="col-6 col-md-4 my-5 text-center text-md-end">
-                        <i className="fal fa-joystick fa-2x text-main"></i>
+                        <i className="fa-solid fa-joystick fa-2x text-main"></i>
                         <p className="h1 my-2">51</p>
                         <p>Platforms</p>
                     </div>
                     <div className="col-6 col-md-4 my-5 text-center text-md-start">
-                        <i className="fal fa-users fa-2x text-main"></i>
+                        <i className="fa-regular fa-users fa-2x text-main"></i>
                         <p className="h1 my-2">48674</p>
                         <p>Publishers</p>
                     </div>
                     <div className="col-6 col-md-4 my-5 text-center">
-                        <i className="fal fa-tag fa-2x text-main"></i>
+                        <i className="fa-solid fa-tags fa-2x text-main"></i>
                         <p className="h1 my-2">7363</p>
                         <p>Tags</p>
                     </div>
                     <div className="col-6 col-md-4 my-5 text-center text-md-end">
-                        <i className="fal fa-hands-helping fa-2x text-main"></i>
+                        <i className="fa-solid fa-handshake-angle fa-2x text-main"></i>
                         <p className="h1 my-2">24935</p>
                         <p>Creators</p>
                     </div>

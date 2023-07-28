@@ -11,10 +11,10 @@ export default function Footer() {
             <div className={"position-absolute " + classes.footerBox}></div>
             <div className="row py-3 px-md-4 justify-content-between align-items-center">
                 <div className="col-12">
-                    <div className="font-exan text-main">ReHacktor</div>
+                    <div className="font-orbitron text-main">ReHacktor</div>
                 </div>
             </div>
-            <div className="row px-md-5">
+            <div className="row px-md-5 ">
                 <div className="col-12 col-md-4 py-2 py-md-4 ">
                     <p className="small mb-0">
                         Explore a vast catalog of video games, register and let
@@ -26,7 +26,7 @@ export default function Footer() {
                         Made for HackJS by Aulab - 2023
                     </p>
                 </div>
-                <div className="col-12 col-md-4 py-2 py-md-4 small">
+                <div className="col-12 col-md-4 py-2 py-md-4 small d-flex justify-content-between">
                     <a
                         href="https://aulab.it"
                         className="text-decoration-none text-white me-3"

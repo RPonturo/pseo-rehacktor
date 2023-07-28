@@ -1,14 +1,14 @@
-import useToggle from "../Hooks/useToggle";
+import useToggle from "../../../Hooks/useToggle";
 
-export default function Info() {
+export default function Credits() {
     const [salta, setSalta] = useToggle();
     const [muovi, setMuovi] = useToggle();
     const [gira, setGira] = useToggle();
     const [batti, setBatti] = useToggle();
 
     return (
-        <div className="row py-3 px-5 mx-0">
-            <div className="col-12 fs-5">
+        <div className="row py-5 px-5 mx-0 mt-5">
+            <div className="col-12 fs-5 py-3">
                 <ul className="list-group list-group-flush ">
                     <li className="list-group-item">
                         <span className="fw-light">Corso: </span>
@@ -29,26 +29,24 @@ export default function Info() {
                     </li>
                     <li className="list-group-item">
                         <span className="fw-light">Progetto: </span>
-                        <span className="fw-bold text-white">
-                            Vite 02 NETFLIX
-                        </span>
+                        <span className="fw-bold text-white">ReHacktor</span>
                     </li>
                     <li className="list-group-item">
                         <span className="fw-light">Librerie: </span>
                         <span className="fw-bold text-white">
-                            React, Vite, Bootstrap, React-Router-DOM, Embla
-                            Carousel, Google Fonts, Fontawesome, React-PDF
+                            React, Bootstrap, React-Router-DOM, Google Fonts,
+                            Fontawesome
                         </span>
                     </li>
                     <li className="list-group-item">
                         <span className="fw-light">API: </span>
                         <span className="fw-bold text-white">
-                            The Movie Database (TMDB)
+                            The Biggest Video Game Database on RAWG (RAWG)
                         </span>
                     </li>
                 </ul>
             </div>
-            <div className="col-12 fs-5">
+            <div className="col-12 fs-5 py-3">
                 <div className="pt-3">
                     <i
                         className={
