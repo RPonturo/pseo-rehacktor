@@ -35,7 +35,7 @@ export default function Credits() {
                         <span className="fw-light">Librerie: </span>
                         <span className="fw-bold text-white">
                             React, Bootstrap, React-Router-DOM, Google Fonts,
-                            Fontawesome
+                            Fontawesome, Swiper
                         </span>
                     </li>
                     <li className="list-group-item">

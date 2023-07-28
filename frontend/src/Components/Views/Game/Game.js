@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { ConfigContext } from "../../../Contexts/Config";
 
 export default function Game() {
+    let { api_urls, api_secrets } = useContext(ConfigContext);
     let { slug } = useParams();
     const [game, setGame] = useState(null);
     useEffect(() => {
-        fetch(
-            `https://api.rawg.io/api/games/${slug}?key=b89bcc2793194ab7a4e75876c96e1fe3`
-        )
+        fetch(`${api_urls.games}/api/games/${slug}?key=${api_secrets.games}`)
             .then((response) => response.json())
             .then((data) => {
                 setGame(data);
             });
-    }, [slug]);
+    }, [slug, api_urls.games, api_secrets.games]);
     return (
         game && (
             <>
@@ -55,10 +55,20 @@ export default function Game() {
                                         to={`/serach/${el.slug}`}
                                         className="text-decoration-none me-2"
                                     >
-                                        <button className="btn btn-outline-danger px-5 rounded-0">
+                                        <button className="btn btn-dark btn-outline-danger px-5 rounded-0">
                                             {el.name}
                                         </button>
                                     </Link>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="row mt-5">
+                            <h3>Platforms</h3>
+                            <div>
+                                {game.platforms.map((el) => (
+                                    <span className="me-3" key={el.platform.id}>
+                                        {el.platform.name}
+                                    </span>
                                 ))}
                             </div>
                         </div>

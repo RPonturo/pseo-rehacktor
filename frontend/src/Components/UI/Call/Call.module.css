@@ -41,3 +41,14 @@
     top: -40px;
     z-index: 990;
 }
+
+.button-explore {
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    border-width: 3px;
+    --bs-border-opacity: 1;
+    border-color: rgba(var(--bs-danger-rgb), 0);
+}
+
+.button-explore:hover {
+    border-color: rgba(var(--bs-danger-rgb), var(--bs-border-opacity));
+}

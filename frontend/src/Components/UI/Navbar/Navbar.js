@@ -24,23 +24,22 @@ export default function Navbar() {
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
                             <NavLink
-                                to="/"
-                                className={({ isActive }) =>
-                                    isActive ? "nav-link active" : "nav-link"
-                                }
-                            >
-                                Home
-                            </NavLink>
-                        </li>
-
-                        <li className="nav-item">
-                            <NavLink
                                 to="/search"
                                 className={({ isActive }) =>
                                     isActive ? "nav-link active" : "nav-link"
                                 }
                             >
                                 Search
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/profile"
+                                className={({ isActive }) =>
+                                    isActive ? "nav-link active" : "nav-link"
+                                }
+                            >
+                                Profile
                             </NavLink>
                         </li>
                         <li className="nav-item">

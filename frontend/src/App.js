@@ -7,6 +7,8 @@ import Error from "./Components/Views/Error/Error";
 import Game from "./Components/Views/Game/Game";
 import Search from "./Components/Views/Search/Search";
 import Credits from "./Components/Views/Credits/Credits";
+import Profile from "./Components/Views/Profile/Profile";
+import ProtectedRoute from "./Components/Utilities/ProtectedRoute";
 
 function App() {
     const router = createBrowserRouter([
@@ -30,6 +32,14 @@ function App() {
                 {
                     path: "/search",
                     element: <Search />,
+                },
+                {
+                    path: "/profile",
+                    element: (
+                        <ProtectedRoute>
+                            <Profile />
+                        </ProtectedRoute>
+                    ),
                 },
             ],
         },

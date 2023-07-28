@@ -1,5 +1,5 @@
 .card-game {
-    width: 300px;
+    width: auto;
     height: 200px;
     position: relative;
     overflow: hidden;
@@ -16,10 +16,18 @@
 
 .card-game > p {
     position: absolute;
-    bottom: 10px;
+
+    padding: 10px;
+    width: 100%;
+}
+.card-game > p:first-of-type {
+    top: 5px;
+    margin-top: 0px;
+}
+
+.card-game > p:last-of-type {
+    bottom: 5px;
     margin-bottom: 0px;
-    padding-left: 10px;
-    padding-bottom: 10px;
 }
 
 .card-game > a {
@@ -27,8 +35,9 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    top: 80px;
-    left: 130px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
     background-color: #212529;
     border: 1px solid #dc3545;
     display: flex;
@@ -42,7 +51,7 @@
 
 .card-game:hover > a {
     opacity: 1;
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
 }
 
 .card-game:hover > img {
@@ -58,6 +67,7 @@
         transparent 0 10px,
         rgba(255, 0, 0, 0.4) 10px 20px
     );
+    transition: 0.3s;
 }
 
 .card-game > div:first-of-type {
@@ -66,4 +76,8 @@
 
 .card-game > div:last-of-type {
     bottom: 0px;
+}
+
+.card-game:hover > div {
+    height: 15px;
 }

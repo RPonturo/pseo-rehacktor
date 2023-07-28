@@ -17,7 +17,12 @@ export default function Call() {
                 <div className="wrapper h-100">
                     <div className="row h-100 justify-content-center align-items-end pb-5">
                         <div className={"col-12 text-center " + classes.links}>
-                            <button className="btn btn-dark">
+                            <button
+                                className={
+                                    "btn btn-dark btn-lg rounded-0 " +
+                                    classes["button-explore"]
+                                }
+                            >
                                 Explore now
                             </button>
                         </div>
