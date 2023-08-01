@@ -4,6 +4,7 @@ export const ConfigContext = createContext();
 
 export function ConfigProvider(props) {
     const api_urls = {
+        backend: process.env.REACT_APP_API_URL,
         games: process.env.REACT_APP_GAMES_API_URL,
     };
 

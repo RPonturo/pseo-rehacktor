@@ -8,11 +8,15 @@
     left: 10px;
     width: 2px;
     height: 100%;
-    background-color: #dc3545;
+    background-color: var(--mars);
 }
 
 .bg-info {
-    background: linear-gradient(#212529 5%, rgba(33, 37, 41, 0.6), #212529),
+    background: linear-gradient(
+            var(--bgDark) 5%,
+            rgba(33, 37, 41, 0.6),
+            var(--bgDark)
+        ),
         url("./../../../Assets/grid.png"), url("./../../../Assets/mars-sky.jpg");
     background-size: cover, 120px, cover;
     background-position: center, center, center;
@@ -29,8 +33,8 @@
     left: -25px;
     width: 15px;
     height: 15px;
-    background-color: #dc3545;
-    border: 1px solid #212529;
+    background-color: var(--mars);
+    border: 1px solid var(--bgDark);
     transform: rotate(45deg);
 }
 
@@ -40,7 +44,7 @@
     }
 
     .info-title {
-        border-bottom: 2px solid #dc3545;
+        border-bottom: 2px solid var(--mars);
         padding-left: 10px;
     }
 

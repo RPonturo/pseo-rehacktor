@@ -3,7 +3,7 @@
     height: 200px;
     position: relative;
     overflow: hidden;
-    border: 1px solid #dc3545;
+    border: 1px solid var(--mars);
 }
 
 .card-game > img {
@@ -38,8 +38,8 @@
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
-    background-color: #212529;
-    border: 1px solid #dc3545;
+    background-color: var(--bgDark);
+    border: 1px solid var(--mars);
     display: flex;
     justify-content: center;
     align-items: center;

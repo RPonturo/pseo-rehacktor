@@ -11,8 +11,8 @@
     width: 100%;
     background: linear-gradient(
         90deg,
-        #dc3545,
-        #dc3545 calc(100% - 74px),
+        var(--mars),
+        var(--mars) calc(100% - 74px),
         transparent calc(100% - 74px)
     );
 }
@@ -24,7 +24,7 @@
     width: 60px;
     height: 60px;
     background-color: rgba(52, 58, 64, 1);
-    border-top: 2px solid #dc3545;
+    border-top: 2px solid var(--mars);
 }
 
 .footerBox::after {

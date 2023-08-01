@@ -1,5 +1,9 @@
 .bg-info {
-    background: linear-gradient(#212529 5%, rgba(33, 37, 41, 0.6), #212529),
+    background: linear-gradient(
+            var(--bgDark) 5%,
+            rgba(33, 37, 41, 0.6),
+            var(--bgDark)
+        ),
         url("./../../../Assets/grid.png"), url("./../../../Assets/mars-sky.jpg");
     background-size: cover, 120px, cover;
     background-position: center, center, center;

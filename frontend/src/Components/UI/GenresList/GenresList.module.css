@@ -1,9 +1,16 @@
 .genres-wrapper {
-    height: 400px;
+    height: 410px;
     overflow-y: scroll;
 }
 
-.genres-wrapper > button:hover {
-    padding-left: 30px;
+.genres-wrapper button {
     transition: 0.3s;
+}
+
+.genres-wrapper button:hover {
+    padding-left: 30px;
+}
+
+.genres-active {
+    box-shadow: inset 0px 0px 0px 3px var(--mars);
 }

@@ -8,6 +8,14 @@
     font-family: "Rajdhani", sans-serif;
 }
 
+:root {
+    --mars: #dc3545;
+    --marsDark: #a22632;
+    --marsLight: rgb(255, 127, 127) 3545;
+    --marsShadow: rgba(220, 53, 69, 0.25);
+    --bgDark: #212529;
+}
+
 .font-segoe {
     font-family: "Segoe";
 }
@@ -21,9 +29,42 @@ body {
 }
 
 .text-main {
-    color: #dc3545;
+    color: var(--mars);
 }
 
 .text-main:hover {
-    color: #dc3545 !important;
+    color: var(--mars) !important;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--mars);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--mars);
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: var(--marsLight);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--marsShadow);
 }

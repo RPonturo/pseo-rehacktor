@@ -30,7 +30,7 @@ function App() {
                     element: <Game />,
                 },
                 {
-                    path: "/search",
+                    path: "/search/:genre/:num",
                     element: <Search />,
                 },
                 {

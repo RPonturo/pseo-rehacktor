@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ConfigContext } from "../../../Contexts/Config";
+import Loader from "../../UI/Loader/Loader";
 
 export default function Game() {
     let { api_urls, api_secrets } = useContext(ConfigContext);
@@ -14,8 +15,8 @@ export default function Game() {
             });
     }, [slug, api_urls.games, api_secrets.games]);
     return (
-        game && (
-            <>
+        <>
+            {game ? (
                 <div
                     className="container-fluid pt-5 min-vh-100"
                     style={{
@@ -52,7 +53,7 @@ export default function Game() {
                                 {game.genres.map((el) => (
                                     <Link
                                         key={el.id}
-                                        to={`/serach/${el.slug}`}
+                                        to={`/search/${el.slug}/1`}
                                         className="text-decoration-none me-2"
                                     >
                                         <button className="btn btn-dark btn-outline-danger px-5 rounded-0">
@@ -72,11 +73,9 @@ export default function Game() {
                                 ))}
                             </div>
                         </div>
-
                         <div className="row my-5">
                             <div className="col-12 col-md-4 col-lg-3 mb-5">
                                 <p className="h4 text-main">Informations</p>
-
                                 <div className="mb-3">
                                     <p className="small mb-0">WEBSITE</p>
                                     <p className="ms-3 mb-0">
@@ -132,7 +131,13 @@ export default function Game() {
                         </div>
                     </div>
                 </div>
-            </>
-        )
+            ) : (
+                <div className="container-fluid pt-5 mt-5 min-vh-100">
+                    <div className="row justify-content-center">
+                        <Loader />
+                    </div>
+                </div>
+            )}
+        </>
     );
 }

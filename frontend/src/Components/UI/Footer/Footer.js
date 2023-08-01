@@ -23,7 +23,7 @@ export default function Footer() {
                 </div>
                 <div className="col-12 col-md-4 py-2 py-md-4 ">
                     <p className="small mb-0">
-                        Made for HackJS by Aulab - 2023
+                        Made for Aulab - Masterclass React JS 6^ edizione
                     </p>
                 </div>
                 <div className="col-12 col-md-4 py-2 py-md-4 small d-flex justify-content-between">
@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="row">
                 <div className="col-12 text-center">
                     <p className="small text-secondary">
-                        All data and images are provided by{" "}
+                        All data and images are provided by
                         <a
                             className="text-decoration-none text-secondary"
                             href="https://rawg.io/"

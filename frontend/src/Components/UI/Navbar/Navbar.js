@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import classes from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -10,13 +10,13 @@ export default function Navbar() {
             }
         >
             <div className="container-fluid">
-                <a
+                <Link
                     className="text-decoration-none font-orbitron text-main h4"
-                    href="/"
+                    to="/"
                 >
                     <i className="fa-light fa-solar-system fa-beat me-3"></i>
                     ReHacktor
-                </a>
+                </Link>
 
                 <div className={classes.navLogo}></div>
 
@@ -24,7 +24,7 @@ export default function Navbar() {
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
                             <NavLink
-                                to="/search"
+                                to="/search/action/1"
                                 className={({ isActive }) =>
                                     isActive ? "nav-link active" : "nav-link"
                                 }

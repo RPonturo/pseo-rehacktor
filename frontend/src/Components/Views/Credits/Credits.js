@@ -35,7 +35,8 @@ export default function Credits() {
                         <span className="fw-light">Librerie: </span>
                         <span className="fw-bold text-white">
                             React, Bootstrap, React-Router-DOM, Google Fonts,
-                            Fontawesome, Swiper
+                            Fontawesome, Swiper, React-CountUp,
+                            React-Visibility-Sensor
                         </span>
                     </li>
                     <li className="list-group-item">
@@ -46,11 +47,11 @@ export default function Credits() {
                     </li>
                 </ul>
             </div>
-            <div className="col-12 fs-5 py-3">
-                <div className="pt-3">
+            <div className="row fs-5 py-3 justify-content-between">
+                <div className="col-6 col-md-3 pt-3">
                     <i
                         className={
-                            "fa-solid fa-horse fa-2xl " +
+                            "fa-duotone fa-unicorn fa-2xl " +
                             (salta ? "fa-bounce" : "")
                         }
                         style={{
@@ -61,10 +62,10 @@ export default function Credits() {
                         {salta ? "Fermati" : "Salta"}
                     </button>
                 </div>
-                <div className="pt-3">
+                <div className="col-6 col-md-3 pt-3">
                     <i
                         className={
-                            "fa-solid fa-dragon fa-2xl " +
+                            "fa-duotone fa-dragon fa-2xl " +
                             (muovi ? "fa-shake" : "")
                         }
                         style={{ color: "#2ed822" }}
@@ -73,10 +74,11 @@ export default function Credits() {
                         {muovi ? "Fermati" : "Muovi"}
                     </button>
                 </div>
-                <div className="pt-3">
+                <div className="col-6 col-md-3 pt-3">
                     <i
                         className={
-                            "fa-solid fa-star fa-2xl " + (gira ? "fa-spin" : "")
+                            "fa-duotone fa-stars fa-2xl " +
+                            (gira ? "fa-spin" : "")
                         }
                         style={{ color: "#f0ff24" }}
                     ></i>
@@ -84,7 +86,7 @@ export default function Credits() {
                         {gira ? "Fermati" : "Gira"}
                     </button>
                 </div>
-                <div className="pt-3">
+                <div className="col-6 col-md-3 pt-3">
                     <i
                         className={
                             "fa-solid fa-heart fa-2xl " +
