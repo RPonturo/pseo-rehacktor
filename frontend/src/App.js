@@ -9,6 +9,7 @@ import Search from "./Components/Views/Search/Search";
 import Credits from "./Components/Views/Credits/Credits";
 import Profile from "./Components/Views/Profile/Profile";
 import ProtectedRoute from "./Components/Utilities/ProtectedRoute";
+import Sign from "./Components/Views/Sign/Sign";
 
 function App() {
     const router = createBrowserRouter([
@@ -30,8 +31,12 @@ function App() {
                     element: <Game />,
                 },
                 {
-                    path: "/search/:genre/:num",
+                    path: "/search/:genre/:num?",
                     element: <Search />,
+                },
+                {
+                    path: "/sign",
+                    element: <Sign />,
                 },
                 {
                     path: "/profile",

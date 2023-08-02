@@ -8,10 +8,9 @@ import Loader from "../../UI/Loader/Loader";
 
 export default function Search() {
     let { api_urls, api_secrets } = useContext(ConfigContext);
+    let { genre, num } = useParams();
     const [genres, setGenres] = useState(null);
     const [games, setGames] = useState(null);
-    let { genre } = useParams();
-    let { num } = useParams();
     const [searched, setSearched] = useState("");
 
     useEffect(() => {
@@ -21,6 +20,7 @@ export default function Search() {
     }, [api_urls.games, api_secrets.games]);
 
     useEffect(() => {
+        if (!num) return;
         fetch(
             `${api_urls.games}/api/games?key=${api_secrets.games}&genres=${genre}&page=${num}&page_size=12`
         )

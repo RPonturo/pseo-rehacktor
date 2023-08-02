@@ -73,7 +73,7 @@ export default function Game() {
                                 ))}
                             </div>
                         </div>
-                        <div className="row my-5">
+                        <div className="row mt-5">
                             <div className="col-12 col-md-4 col-lg-3 mb-5">
                                 <p className="h4 text-main">Informations</p>
                                 <div className="mb-3">

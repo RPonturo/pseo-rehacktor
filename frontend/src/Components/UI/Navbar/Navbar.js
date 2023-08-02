@@ -1,7 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
 import classes from "./Navbar.module.css";
+import { AuthContext } from "../../../Contexts/Auth";
+import { useContext, useState } from "react";
+import Modal from "../Modal/Modal";
 
 export default function Navbar() {
+    const { user, logout } = useContext(AuthContext);
+    const [modal, setModal] = useState(false);
+
+    const closeModal = () => setModal(false);
+
     return (
         <nav
             className={
@@ -32,16 +40,55 @@ export default function Navbar() {
                                 Search
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink
-                                to="/profile"
-                                className={({ isActive }) =>
-                                    isActive ? "nav-link active" : "nav-link"
-                                }
-                            >
-                                Profile
-                            </NavLink>
-                        </li>
+                        {!user && (
+                            <li className="nav-item">
+                                <NavLink
+                                    to="/sign"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "nav-link active"
+                                            : "nav-link"
+                                    }
+                                >
+                                    Sign
+                                </NavLink>
+                            </li>
+                        )}
+                        {user && (
+                            <>
+                                {modal && (
+                                    <Modal
+                                        title="Oh no..."
+                                        message="Vuoi già lasciarci? Ricorda che ventuali stream in corso saranno interrotti"
+                                        declineMessage="Rimani"
+                                        confirmMessage="Esci"
+                                        closeModal={closeModal}
+                                        action={logout}
+                                    />
+                                )}
+                                <li className="nav-item">
+                                    <NavLink
+                                        to="/profile"
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "nav-link text-capitalize active"
+                                                : "nav-link text-capitalize"
+                                        }
+                                    >
+                                        <i className="fa-sharp fa-light fa-square-user me-1"></i>
+                                        {user.username}
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <button
+                                        className="btn nav-link text-danger"
+                                        onClick={() => setModal(!modal)}
+                                    >
+                                        <i className="fa-duotone fa-person-from-portal fa-lg"></i>
+                                    </button>
+                                </li>
+                            </>
+                        )}
                         <li className="nav-item">
                             <NavLink
                                 to="/xyz"
