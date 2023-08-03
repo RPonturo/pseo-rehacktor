@@ -57,7 +57,6 @@ export default function GamesList({ dates }) {
                     spaceBetween: 30,
                 },
             }}
-            grabCursor={true}
             navigation={true}
             scrollbar={{
                 hide: true,

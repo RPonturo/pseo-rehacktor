@@ -6,7 +6,7 @@
     border: 1px solid var(--mars);
 }
 
-.card-game > img {
+.card-game img {
     width: 100%;
     height: 100%;
     object-fit: cover;

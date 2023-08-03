@@ -7,7 +7,7 @@ export default function Credits() {
     const [batti, setBatti] = useToggle();
 
     return (
-        <div className="row py-5 px-5 mx-0 mt-5">
+        <div className="row py-5 px-5 mx-0 mt-5 min-vh-100">
             <div className="col-12 fs-5 py-3">
                 <ul className="list-group list-group-flush ">
                     <li className="list-group-item">
