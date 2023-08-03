@@ -7,13 +7,13 @@ export default function GenresList(props) {
             {props.data.map((genre) => (
                 <NavLink
                     className="text-decoration-none"
-                    to={`/search/${genre.slug}/1`}
+                    to={`/genres/${genre.slug}`}
                     key={genre.id}
                 >
                     {({ isActive }) => (
                         <button
                             className={
-                                "btn btn-dark btn-outline-danger rounded-0 d-block w-100 text-start mb-2 " +
+                                "btn btn-outline-danger rounded-0 d-block w-100 text-start mb-2 text-white " +
                                 (isActive ? `${classes["genres-active"]}` : "")
                             }
                             key={genre.id}

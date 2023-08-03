@@ -10,12 +10,12 @@ const Overlay = (props) => {
         <div className={classes.modal}>
             <div className="text-center">
                 <i className="fa-light fa-solar-system fa-beat me-3 text-danger fa-xl"></i>
-                <h2>{props.title}</h2>
+                <h2 className="mt-2">{props.title}</h2>
             </div>
             <p className="my-5">{props.message}</p>
             <div className="mt-5 d-flex justify-content-between">
                 <button
-                    className="btn btn-outline-danger rounded-0 px-3"
+                    className="btn btn-outline-danger rounded-0 px-3 text-white"
                     onClick={props.closeModal}
                 >
                     {props.declineMessage}

@@ -1,5 +1,5 @@
 .genres-wrapper {
-    height: 410px;
+    height: 685px;
     overflow-y: scroll;
 }
 
@@ -13,4 +13,11 @@
 
 .genres-active {
     box-shadow: inset 0px 0px 0px 3px var(--mars);
+}
+
+@media (max-width: 768px) {
+    .genres-wrapper {
+        height: 410px;
+        overflow-y: scroll;
+    }
 }

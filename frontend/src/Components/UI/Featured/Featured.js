@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import Card from "../Card/Card";
 import { ConfigContext } from "../../../Contexts/Config";
-// import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 
 export default function Featured() {
     const [featured, setFeatured] = useState(null);
@@ -55,23 +53,4 @@ export async function loadGames(){
     return await fetch()
 }
 
-
-                <Swiper spaceBetween={50} slidesPerView={4}>
-                    {featured &&
-                        featured.map((el) => {
-                            return (
-                                <SwiperSlide
-                                    className="col-12 col-md-6 col-lg-3 pb-3"
-                                    key={el.id}
-                                >
-                                    <Card
-                                        image={el.background_image}
-                                        name={el.name}
-                                        slug={el.slug}
-                                        rating={el.rating}
-                                    />
-                                </SwiperSlide>
-                            );
-                        })}{" "}
-                </Swiper>
 */

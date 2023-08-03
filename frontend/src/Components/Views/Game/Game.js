@@ -53,10 +53,10 @@ export default function Game() {
                                 {game.genres.map((el) => (
                                     <Link
                                         key={el.id}
-                                        to={`/search/${el.slug}/1`}
+                                        to={`/genres/${el.slug}/1`}
                                         className="text-decoration-none me-2"
                                     >
-                                        <button className="btn btn-dark btn-outline-danger px-5 rounded-0">
+                                        <button className="btn btn-outline-danger px-5 rounded-0 text-white">
                                             {el.name}
                                         </button>
                                     </Link>

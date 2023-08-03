@@ -69,7 +69,7 @@ export default function SignIn() {
                 <div className="mb-3">
                     <button
                         type="submit"
-                        className="btn btn-outline-danger px-5 rounded-0"
+                        className="btn btn-outline-danger px-5 rounded-0 text-white"
                     >
                         Login
                     </button>

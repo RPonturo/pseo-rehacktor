@@ -14,6 +14,8 @@
     --marsLight: rgb(255, 127, 127) 3545;
     --marsShadow: rgba(220, 53, 69, 0.25);
     --bgDark: #212529;
+    --swiper-scrollbar-drag-bg-color: rgba(220, 53, 69, 0.6);
+    --swiper-navigation-color: var(--mars);
 }
 
 .font-segoe {
@@ -133,4 +135,15 @@ input[type="color"]:focus,
     height: 30px;
     border-right: 2px solid var(--mars);
     border-bottom: 2px solid var(--mars);
+}
+
+.bg-info {
+    background: linear-gradient(
+            var(--bgDark) 5%,
+            rgba(33, 37, 41, 0.6),
+            var(--bgDark)
+        ),
+        url("./Assets/grid.png"), url("./Assets/mars-sky.jpg");
+    background-size: cover, 120px, cover;
+    background-position: center, center, center;
 }

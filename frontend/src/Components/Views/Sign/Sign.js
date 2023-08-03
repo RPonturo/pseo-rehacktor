@@ -13,7 +13,7 @@ export default function Sign() {
                     <div className="col-12 col-md-8 col-lg-6">
                         {isLogin ? <SignIn /> : <SignUp />}
                         <button
-                            className="mt-5 small btn btn-outline-danger rounded-0"
+                            className="mt-5 small btn btn-outline-danger rounded-0 text-white"
                             onClick={() => setIsLogin(!isLogin)}
                         >
                             {isLogin
