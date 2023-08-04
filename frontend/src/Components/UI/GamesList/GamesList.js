@@ -6,7 +6,7 @@ import "swiper/css";
 
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
-
+import { register } from "swiper/element/bundle";
 import { Navigation, Scrollbar } from "swiper/modules";
 
 export default function GamesList({ dates }) {
@@ -14,6 +14,7 @@ export default function GamesList({ dates }) {
     let { api_urls, api_secrets } = useContext(ConfigContext);
 
     useEffect(() => {
+        register();
         fetch(
             `${api_urls.games}/api/games?&page_size=20&exclude_parents=true&exclude_additions=true&ordering=-rating&key=${api_secrets.games}${dates}`
         )

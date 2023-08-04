@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ConfigContext } from "../../../Contexts/Config";
 import Loader from "../../UI/Loader/Loader";
+import ReadMore from "../../UI/ReadMore/ReadMore";
 
 export default function Game() {
     let { api_urls, api_secrets } = useContext(ConfigContext);
@@ -37,7 +38,7 @@ export default function Game() {
                         </div>
                         <div className="row mt-3">
                             <div className="col-12 col-md-6">
-                                {game.description_raw}
+                                <ReadMore text={game.description_raw} />
                             </div>
                             <div className="col-12 col-md-6">
                                 <img

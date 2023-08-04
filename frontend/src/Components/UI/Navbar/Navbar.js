@@ -3,13 +3,14 @@ import classes from "./Navbar.module.css";
 import { AuthContext } from "../../../Contexts/Auth";
 import { useContext, useState } from "react";
 import Modal from "../Modal/Modal";
-import useToggle from "../../../Hooks/useToggle";
 
 export default function Navbar() {
     const { user, logout } = useContext(AuthContext);
     const [modal, setModal] = useState(false);
-    const [menu, setMenu] = useToggle(false);
+    const [menu, setMenu] = useState(false);
     const closeModal = () => setModal(false);
+    const closeMenu = () => setMenu(false);
+    const toggleMenu = () => setMenu(!menu);
 
     return (
         <nav
@@ -35,7 +36,7 @@ export default function Navbar() {
                 ></div>
 
                 <button
-                    onClick={setMenu}
+                    onClick={toggleMenu}
                     className={`navbar-toggler rounded-0 ${classes["navbar-togglerMy"]}`}
                     aria-controls="navbarNav"
                     aria-expanded={menu}
@@ -60,7 +61,7 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink
                                 to="/games"
-                                onClick={setMenu}
+                                onClick={closeMenu}
                                 className={({ isActive }) =>
                                     isActive ? "nav-link active" : "nav-link"
                                 }
@@ -72,7 +73,7 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink
                                 to="/genres"
-                                onClick={setMenu}
+                                onClick={closeMenu}
                                 className={({ isActive }) =>
                                     isActive ? "nav-link active" : "nav-link"
                                 }
@@ -84,7 +85,7 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink
                                 to="/search"
-                                onClick={setMenu}
+                                onClick={closeMenu}
                                 className={({ isActive }) =>
                                     isActive ? "nav-link active" : "nav-link"
                                 }
@@ -97,7 +98,7 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <NavLink
                                     to="/sign"
-                                    onClick={setMenu}
+                                    onClick={closeMenu}
                                     className={({ isActive }) =>
                                         isActive
                                             ? "nav-link active"
@@ -124,7 +125,7 @@ export default function Navbar() {
                                 <li className="nav-item">
                                     <NavLink
                                         to="/profile"
-                                        onClick={setMenu}
+                                        onClick={closeMenu}
                                         className={({ isActive }) =>
                                             isActive
                                                 ? "nav-link text-capitalize active"
@@ -149,7 +150,7 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink
                                 to="/xyz"
-                                onClick={setMenu}
+                                onClick={closeMenu}
                                 className={({ isActive }) =>
                                     isActive ? "nav-link active" : "nav-link"
                                 }
@@ -161,7 +162,7 @@ export default function Navbar() {
                         <li className="nav-item">
                             <NavLink
                                 to="/credits"
-                                onClick={setMenu}
+                                onClick={closeMenu}
                                 className={({ isActive }) =>
                                     isActive ? "nav-link active" : "nav-link"
                                 }
