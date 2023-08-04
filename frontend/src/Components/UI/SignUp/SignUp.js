@@ -1,7 +1,7 @@
 import useInput from "../../../Hooks/useInput";
 import { AuthContext } from "../../../Contexts/Auth";
 import { ConfigContext } from "../../../Contexts/Config";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {

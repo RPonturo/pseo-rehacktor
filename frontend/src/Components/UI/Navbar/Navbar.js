@@ -13,7 +13,6 @@ export default function Navbar() {
 
     return (
         <nav
-            expanded={menu}
             className={
                 "navbar navbar-expand-lg navbar-dark shadow fixed-top " +
                 classes.navbar +
@@ -42,7 +41,8 @@ export default function Navbar() {
                     aria-expanded={menu}
                     type="button"
                     aria-label="Toggle navigation"
-                    data-toggle="navbarNav"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
                 >
                     <span
                         className={`navbar-toggler-icon ${classes["navbar-toggler-iconMy"]}`}
