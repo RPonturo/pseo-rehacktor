@@ -82,3 +82,31 @@ http POST http://localhost:8000/api/users/logout "Authorization:Bearer eyJ...sU2
 ### user profile
 
 http GET http://localhost:8000/api/users/view-profile "Authorization:Bearer eyJ...9Kk"
+
+### create new room
+
+http POST http://localhost:8000/api/users/room game_id=35 game_name=zelda max_seats_available=4 "Authorization:Bearer eyJ...9Kk"
+
+### close room
+
+http POST http://localhost:8000/api/users/room/close "Authorization:Bearer eyJ...9Kk"
+
+### join room
+
+http POST http://localhost:8000/api/users/room/join room_id=3 "Authorization:Bearer eyJ...9Kk"
+
+### streamerInfo
+
+http GET http://localhost:8000/api/users/room/streamer/3 "Authorization:Bearer eyJ...9Kk"
+
+### roomsActive
+
+http GET http://localhost:8000/api/users/room/roomsActive
+
+### roomsByGame
+
+http GET http://localhost:8000/api/users/room/roomsByGame?game_id=35
+
+### countUsers
+
+http GET http://localhost:8000/api/users/count
