@@ -117,7 +117,7 @@ export default function Navbar() {
                                         title="Oh no..."
                                         message="Vuoi già lasciarci? Ricorda che ventuali stream in corso saranno interrotti"
                                         declineMessage="Rimani"
-                                        confirmMessage="Esci"
+                                        confirmMessage="Logout"
                                         closeModal={closeModal}
                                         action={logout}
                                     />
@@ -142,7 +142,7 @@ export default function Navbar() {
                                         onClick={() => setModal(!modal)}
                                     >
                                         <i className="fa-fw fa-duotone fa-person-from-portal me-1"></i>
-                                        Esci
+                                        Logout
                                     </button>
                                 </li>
                             </>
