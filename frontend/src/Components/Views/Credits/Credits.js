@@ -36,7 +36,7 @@ export default function Credits() {
                         <span className="fw-bold text-white">
                             React, Bootstrap, React-Router-DOM, Google Fonts,
                             Fontawesome, Swiper, React-CountUp,
-                            React-Visibility-Sensor
+                            React-Visibility-Sensor, Twilio Video
                         </span>
                     </li>
                     <li className="list-group-item">

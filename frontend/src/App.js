@@ -12,6 +12,9 @@ import ProtectedRoute from "./Components/Utilities/ProtectedRoute";
 import Sign from "./Components/Views/Sign/Sign";
 import Genres from "./Components/Views/Genres/Genres";
 import Games from "./Components/Views/Games/Games";
+import Stream from "./Components/Views/Stream/Stream";
+import Streamers from "./Components/Views/Streamers/Streamers";
+import Join from "./Components/Views/Join/Join";
 
 function App() {
     const router = createBrowserRouter([
@@ -53,6 +56,30 @@ function App() {
                     element: (
                         <ProtectedRoute>
                             <Profile />
+                        </ProtectedRoute>
+                    ),
+                },
+                {
+                    path: "/streamers",
+                    element: (
+                        <ProtectedRoute>
+                            <Streamers />
+                        </ProtectedRoute>
+                    ),
+                },
+                {
+                    path: "/join-room/:room_id",
+                    element: (
+                        <ProtectedRoute>
+                            <Join />
+                        </ProtectedRoute>
+                    ),
+                },
+                {
+                    path: "/stream/:game_name/:game_id",
+                    element: (
+                        <ProtectedRoute>
+                            <Stream />
                         </ProtectedRoute>
                     ),
                 },

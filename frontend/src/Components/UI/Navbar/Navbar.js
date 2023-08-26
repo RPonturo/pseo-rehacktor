@@ -1,11 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import classes from "./Navbar.module.css";
 import { AuthContext } from "../../../Contexts/Auth";
+import { StreamingContext } from "../../../Contexts/Streaming";
 import { useContext, useState } from "react";
 import Modal from "../Modal/Modal";
 
 export default function Navbar() {
     const { user, logout } = useContext(AuthContext);
+    const { isStreaming } = useContext(StreamingContext);
     const [modal, setModal] = useState(false);
     const [menu, setMenu] = useState(false);
     const closeModal = () => setModal(false);
@@ -124,6 +126,20 @@ export default function Navbar() {
                                 )}
                                 <li className="nav-item">
                                     <NavLink
+                                        to="/streamers"
+                                        onClick={closeMenu}
+                                        className={({ isActive }) =>
+                                            isActive
+                                                ? "nav-link text-capitalize active"
+                                                : "nav-link text-capitalize"
+                                        }
+                                    >
+                                        <i className="fa-fw fa-sharp fa-regular fa-signal-stream me-1"></i>
+                                        Streamers
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink
                                         to="/profile"
                                         onClick={closeMenu}
                                         className={({ isActive }) =>
@@ -134,6 +150,9 @@ export default function Navbar() {
                                     >
                                         <i className="fa-fw fa-sharp fa-light fa-square-user me-1"></i>
                                         {user.username}
+                                        {isStreaming && (
+                                            <i className="fa-fw fa-sharp fa-regular fa-screencast ms-1 text-danger fa-fade"></i>
+                                        )}
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">

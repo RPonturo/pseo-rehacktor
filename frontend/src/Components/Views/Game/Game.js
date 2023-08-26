@@ -3,9 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import { ConfigContext } from "../../../Contexts/Config";
 import Loader from "../../UI/Loader/Loader";
 import ReadMore from "../../UI/ReadMore/ReadMore";
+import { AuthContext } from "./../../../Contexts/Auth";
 
 export default function Game() {
     let { api_urls, api_secrets } = useContext(ConfigContext);
+    let { user } = useContext(AuthContext);
     let { slug } = useParams();
     const [game, setGame] = useState(null);
     useEffect(() => {
@@ -121,13 +123,19 @@ export default function Game() {
                                 })}
                             </div>
                             <div className="col-12 col-md-4 col-lg-3">
-                                <Link
-                                    to="/"
-                                    className="h4 text-main text-decoration-none fst-italic"
-                                >
-                                    <i className="fal fa-chevron-right" /> Start
-                                    Your Stream
-                                </Link>
+                                {user ? (
+                                    <Link
+                                        to={`/stream/${game.slug}/${game.id}`}
+                                        className="h4 text-main text-decoration-none fst-italic"
+                                    >
+                                        <i className="fal fa-chevron-right" />{" "}
+                                        Start Your Stream
+                                    </Link>
+                                ) : (
+                                    <p className="h4 text-main text-decoration-none fst-italic">
+                                        You must be logged to stream.
+                                    </p>
+                                )}
                             </div>
                         </div>
                     </div>
