@@ -26,11 +26,11 @@ export default function Join() {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authrization: `Bearer ${token}`,
+                Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify({ room_id }),
         })
-            .then((res) => res.json)
+            .then((res) => res.json())
             .then((data) => {
                 if (data === "room closed") {
                     setStatus(closed);
@@ -58,7 +58,7 @@ export default function Join() {
                     {
                         headers: {
                             "Content-Type": "application/json",
-                            Authrization: `Bearer ${token}`,
+                            Authorization: `Bearer ${token}`,
                         },
                     }
                 )

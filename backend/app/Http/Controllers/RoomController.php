@@ -121,6 +121,7 @@ class RoomController extends Controller
 
     public function join(Request $request)
     {
+      
         $user = Auth::user();
         
         $room_id = $request->input('room_id');
