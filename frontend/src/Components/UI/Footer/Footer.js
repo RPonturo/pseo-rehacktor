@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="row">
                 <div className="col-12 text-center">
                     <p className="small text-secondary">
-                        All data and images are provided by
+                        All data and images are provided by{" "}
                         <a
                             className="text-decoration-none text-secondary"
                             href="https://rawg.io/"

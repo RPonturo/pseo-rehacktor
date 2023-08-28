@@ -76,9 +76,14 @@ export default function Join() {
     const showFull = () => {
         if (status === full)
             return (
-                <div className="col-12">
+                <div className="col-12 text-center">
                     <p>Room full!</p>{" "}
-                    <Link to="/streamers">Back to streamers</Link>
+                    <Link
+                        to="/streamers"
+                        className="text-decoration-none text-white"
+                    >
+                        Back to streamers
+                    </Link>
                 </div>
             );
     };
@@ -86,18 +91,23 @@ export default function Join() {
     const showTransmissionIterrupted = () => {
         if (status === closed) {
             return (
-                <div className="col-12">
+                <div className="col-12 text-center">
                     <p>Streaming ended!</p>{" "}
-                    <Link to="/streamers">Back to streamers</Link>
+                    <Link
+                        to="/streamers"
+                        className="text-decoration-none text-white"
+                    >
+                        Back to streamers
+                    </Link>
                 </div>
             );
         }
     };
 
-    return (
-        <div className="container mt-5 pt-5 min-vh-100">
-            <div className="row">
-                <div className="col-12 position-relative">
+    const showStreaming = () => {
+        if (status === streaming) {
+            return (
+                <div className="col-12 position-relative mb-5 pb-5">
                     <div className={classes.wrapperTracks}>
                         <div
                             className={classes.streamer}
@@ -116,6 +126,14 @@ export default function Join() {
                         </div>
                     </div>
                 </div>
+            );
+        }
+    };
+
+    return (
+        <div className="container mt-5 pt-5 min-vh-100">
+            <div className="row d-flex justify-content-center">
+                {showStreaming()}
                 {showLoading()}
                 {showFull()}
                 {showTransmissionIterrupted()}

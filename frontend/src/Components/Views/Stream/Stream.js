@@ -5,6 +5,7 @@ import { ConfigContext } from "../../../Contexts/Config";
 import { StreamingContext } from "../../../Contexts/Streaming";
 import { useContext, useRef } from "react";
 import useInput from "../../../Hooks/useInput";
+import classes from "./Stream.module.css";
 
 export default function Stream() {
     const myFaceVideo = useRef(null);
@@ -87,12 +88,16 @@ export default function Stream() {
         <div className="container mt-5 pt-5 min-vh-100">
             <div className="row">
                 <div className="col-12">
-                    <h3>Hello, {user.username}</h3>
+                    <h3 className="text-capitalize">Hello, {user.username}</h3>
                     {isStreaming ? (
                         <div>
-                            <p>Alredy Streaming.</p>{" "}
+                            <p>
+                                You are streaming{" "}
+                                {game_name.replace(/-/g, " ").toUpperCase()}{" "}
+                                <i className="fa-fw fa-sharp fa-regular fa-screencast ms-1 text-danger fa-fade"></i>
+                            </p>{" "}
                             <button
-                                className="btn btn-danger mt-5"
+                                className="btn btn-danger mt-1 mb-3 rounded-0 px-3"
                                 onClick={endStream}
                             >
                                 Close
@@ -100,28 +105,45 @@ export default function Stream() {
                         </div>
                     ) : (
                         <div>
-                            <p>You are going to stream {game_name}</p>
+                            <p>
+                                You are going to stream{" "}
+                                {game_name.replace(/-/g, " ").toUpperCase()}
+                            </p>
 
-                            <p>Selet a number {number.value}</p>
+                            <p>
+                                <a
+                                    href={`https://www.youtube.com/results?search_query=gameplay+${game_name}`}
+                                    target="_blank"
+                                    className="text-decoration-none text-white"
+                                >
+                                    Search for a gameplay
+                                </a>
+                            </p>
 
-                            <form className="w-25" onSubmit={startStream}>
+                            <p>Select a number of seats: {number.value}</p>
+
+                            <form className="w-50" onSubmit={startStream}>
                                 <input
                                     type="range"
-                                    className="form-range danger"
+                                    className="form-range danger range-cust"
                                     min="1"
                                     max="10"
                                     id="range"
                                     value={number.value}
                                     {...number}
                                 />
-                                <button className="btn btn-outline-danger rounded-0 px-3 text-white">
+                                <button className="btn btn-outline-danger rounded-0 px-3 text-white mt-5">
                                     Stream now!
                                 </button>
                             </form>
                         </div>
                     )}
-
-                    <div ref={myFaceVideo}></div>
+                </div>
+                <div className="col-12 col-md-4 col-lg-3">
+                    <div
+                        ref={myFaceVideo}
+                        className={`w-100 ${classes.faceVideo}`}
+                    ></div>
                 </div>
             </div>
         </div>

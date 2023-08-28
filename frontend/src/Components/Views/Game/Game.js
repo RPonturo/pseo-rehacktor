@@ -14,6 +14,7 @@ export default function Game() {
         fetch(`${api_urls.games}/api/games/${slug}?key=${api_secrets.games}`)
             .then((response) => response.json())
             .then((data) => {
+                console.log(data);
                 setGame(data);
             });
     }, [slug, api_urls.games, api_secrets.games]);
@@ -77,7 +78,7 @@ export default function Game() {
                             </div>
                         </div>
                         <div className="row mt-5">
-                            <div className="col-12 col-md-4 col-lg-3 mb-5">
+                            <div className="col-12 col-md-3 col-lg-3 mb-5">
                                 <p className="h4 text-main">Informations</p>
                                 <div className="mb-3">
                                     <p className="small mb-0">WEBSITE</p>
@@ -122,17 +123,19 @@ export default function Game() {
                                     );
                                 })}
                             </div>
-                            <div className="col-12 col-md-4 col-lg-3">
+                            <div className="col-12 col-md-5 col-lg-5 mb-5">
                                 {user ? (
                                     <Link
                                         to={`/stream/${game.slug}/${game.id}`}
                                         className="h4 text-main text-decoration-none fst-italic"
                                     >
-                                        <i className="fal fa-chevron-right" />{" "}
-                                        Start Your Stream
+                                        <i className="fal fa-chevron-right me-1" />
+                                        Start Your Stream!
+                                        <i className="fa-sharp fa-regular fa-signal-stream fa-fade ms-2"></i>
                                     </Link>
                                 ) : (
-                                    <p className="h4 text-main text-decoration-none fst-italic">
+                                    <p className="h4 text-main text-decoration-none">
+                                        <i className="fa-sharp fa-regular fa-signal-stream-slash me-1"></i>
                                         You must be logged to stream.
                                     </p>
                                 )}

@@ -117,8 +117,8 @@ export default function Navbar() {
                                 {modal && (
                                     <Modal
                                         title="Oh no..."
-                                        message="Vuoi già lasciarci? Ricorda che ventuali stream in corso saranno interrotti"
-                                        declineMessage="Rimani"
+                                        message="Do you already want to leave us? Remember that any streams in progress will be interrupted"
+                                        declineMessage="Stay"
                                         confirmMessage="Logout"
                                         closeModal={closeModal}
                                         action={logout}

@@ -29,7 +29,7 @@ export default function Info() {
                         </p>
                     </div>
                 </div>
-                <InfoDetailsList />
+                <InfoDetailsList show="home" />
             </div>
         </div>
     );
